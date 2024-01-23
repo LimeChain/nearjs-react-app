@@ -1,0 +1,96 @@
+/* App container */
+body {
+  margin: 0;
+  font-family: "Arial", sans-serif;
+}
+
+/* Main content container */
+.container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Navbar spacing */
+.navbar-spacing {
+  margin-bottom: 20px;
+}
+
+/* Get token metadata button */
+button {
+  background-color: #ff6433;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* Token metadata display */
+.token-info {
+  background-color: #f0f0f0;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Token metadata labels */
+.token-info p {
+  margin: 10px 0;
+}
+
+.navbar-container {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-links {
+  display: flex;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px;
+  margin-right: 20px;
+}
+
+.nav-links .active-link {
+  color: #ff6433;
+}
+
+/* Profile section */
+.profile-section {
+  padding: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.profile-section button {
+  background-color: #ff6433;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+.profile-section .profile-link {
+  text-decoration: none;
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
