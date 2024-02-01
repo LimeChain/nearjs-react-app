@@ -1550,9 +1550,9 @@
     borsh "1.0.0"
     randombytes "2.1.0"
 
-"@near-js/keystores-browser@0.0.8":
+"@near-js/keystores-browser@0.0.8", "@near-js/keystores-browser@^0.0.8":
   version "0.0.8"
-  resolved "https://registry.npmjs.org/@near-js/keystores-browser/-/keystores-browser-0.0.8.tgz"
+  resolved "https://registry.yarnpkg.com/@near-js/keystores-browser/-/keystores-browser-0.0.8.tgz#0596370221cd6e52dfd057b8f8889c205a0291e8"
   integrity sha512-ZWBbioO2TUdMkHbmHpwo+DC4CC9XAvS9umIBNgS1XBsY2y3NsG+dWU4bEiFC37fGBzJL9EFw+QJ6RxB+jeOfdQ==
   dependencies:
     "@near-js/crypto" "1.2.0"
@@ -1631,6 +1631,21 @@
 "@near-js/wallet-account@1.0.2":
   version "1.0.2"
   resolved "https://registry.npmjs.org/@near-js/wallet-account/-/wallet-account-1.0.2.tgz"
+  integrity sha512-bbouucpBgFtZ3bI7KvcYT8/r1q4w5UVIbbZqTUnuXpkceSQ7IxjeKCR00Iastj9EOXWAAAJBYkn0942QJjBC5w==
+  dependencies:
+    "@near-js/accounts" "1.0.2"
+    "@near-js/crypto" "1.2.0"
+    "@near-js/keystores" "0.0.8"
+    "@near-js/signers" "0.1.0"
+    "@near-js/transactions" "1.1.0"
+    "@near-js/types" "0.0.4"
+    "@near-js/utils" "0.0.5"
+    bn.js "5.2.1"
+    borsh "1.0.0"
+
+"@near-js/wallet-account@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@near-js/wallet-account/-/wallet-account-1.0.2.tgz#25014069e4102e8b61c73bf64b85f1803ac032f2"
   integrity sha512-bbouucpBgFtZ3bI7KvcYT8/r1q4w5UVIbbZqTUnuXpkceSQ7IxjeKCR00Iastj9EOXWAAAJBYkn0942QJjBC5w==
   dependencies:
     "@near-js/accounts" "1.0.2"

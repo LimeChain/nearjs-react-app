@@ -1,13 +1,14 @@
 import React from "react";
 import "./index.css";
 import App from "./App";
-import * as nearAPI from "near-api-js";
+import * as keyStores from '@near-js/keystores-browser'
+import { WalletConnection, Near } from '@near-js/wallet-account'
 import ReactDOM from "react-dom";
 
 async function init() {
-  const near = await nearAPI.connect({
+  const near = new Near({
     deps: {
-      keyStore: new nearAPI.keyStores.BrowserLocalStorageKeyStore(),
+      keyStore: new keyStores.BrowserLocalStorageKeyStore(),
     },
     networkId: "mainnet",
     nodeUrl: "https://rpc.mainnet.near.org",
@@ -15,7 +16,7 @@ async function init() {
     helperUrl: "https://helper.mainnet.near.org",
   });
 
-  const walletConnection = new nearAPI.WalletConnection(
+  const walletConnection = new WalletConnection(
     near,
     "Nearjs react app"
   );
@@ -40,6 +41,8 @@ const initializeNear = async () => {
   }
 };
 
+initializeNear();
+
 const renderApp = (currentUser: any, walletConnection: any) => {
   ReactDOM.render(
     <React.StrictMode>
@@ -48,5 +51,3 @@ const renderApp = (currentUser: any, walletConnection: any) => {
     document.getElementById("root")
   );
 };
-
-(window as any).nearInitPromise = initializeNear();
