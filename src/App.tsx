@@ -1,9 +1,12 @@
 import "./App.css";
 import { BrowserRouter, NavLink } from "react-router-dom"
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { BeatLoader } from "react-spinners";
+import { setupModal } from "@near-wallet-selector/modal-ui";
+import { WalletSelector } from "@near-wallet-selector/core";
+import "@near-wallet-selector/modal-ui/styles.css";
 
-function App({ currentUser, wallet }: any): any {
+function App({ currentUser, wallet, selector }: { currentUser: any, wallet: any, selector: WalletSelector }): any {
   const [user, setUser] = useState(currentUser);
   const [metadata, setMetadata] = useState<{ name: string, symbol: string, decimals: number } | null>(null);
   const [loading, setLoading] = useState(false);
@@ -11,25 +14,22 @@ function App({ currentUser, wallet }: any): any {
   useEffect(() => {
     (async () => {
       if (wallet) {
-        setUser({
-          accountId: wallet.getAccountId(),
-          balance: (await wallet.account().state()).amount,
-        });
+        setUser(
+          wallet.getAccountId(),
+        );
       }
     })();
   }, []);
 
   const handleUser = async (e: any) => {
-    if (user && e.target.textContent === "Sign Out") {
-      await wallet.signOut();
-      window.location.replace(
-        window.location.origin + window.location.pathname
-      );
-    } else if (!user && e.target.textContent === "Login") {
-      await wallet.requestSignIn({
-        contractId: "usdt.tether-token.near",
-        methodNames: ["ft_metadata", "ft_transfer"],
+    if (!user) {
+      const modal = setupModal(selector, {
+        contractId: "usdt.tether-token.near"
       });
+      modal.show()
+    } else {
+      await wallet.signOut();
+      window.location.reload()
     }
   };
 
@@ -69,7 +69,7 @@ function App({ currentUser, wallet }: any): any {
           <span />
           {user && <h3>{user?.accountId}</h3>}
           <button className="user-button" onClick={handleUser}>
-            {user ? "Sign Out" : "Login"}
+            {!!user ? "Sign Out" : "Login"}
           </button>
         </div>
       </div>
