@@ -28,6 +28,10 @@ This project serves as a foundation for building decentralized applications (DAp
 - React and near-api-js Setup
 - Basic DApp Structure
 
+## Preview
+
+![Preview](./images/preview.gif)
+
 ## Learn More
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
