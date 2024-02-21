@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Tutorial on Medium
 
-[Link to Medium Tutorial Article]
+[Tutorial](https://medium.com/@limechain/integrating-naj-with-react-4bfd7f7ba2e4)
 
 ## Overview
 
